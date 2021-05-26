@@ -25,7 +25,7 @@ meetingsRouter.get('/', (req, res, next) => {
 
 //POST /api/meetings create new meeting (use createMeeting fxn from db.js)
 meetingsRouter.post('/', (req, res, next) => {
-    const newMeeting = addToDatabase('meetings', createMeeting());
+    let newMeeting = addToDatabase('meetings', createMeeting());
     res.status(201).send(newMeeting);
 });
 
